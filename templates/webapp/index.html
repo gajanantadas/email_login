@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login System Using  Email </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'webapp/css/main.css' %}" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="navbar__buttons">
+        {% if login %}
+        <h1 class="btn btn-secondary">{{un}}</h1>
+        <a href="{% url 'logout' %}" class="btn btn-primary">LogOut</a>
+        {%else%}
+        <a href="{% url 'login' %}" class="btn btn-primary" id="login_form">LogIn</a>
+        {%endif%}
+        <a href="{% url 'reg' %}" class="btn btn-primary" id="signup_form">SignUp</a>
+      </div>
+    </nav>
+  </body>
+</html>
